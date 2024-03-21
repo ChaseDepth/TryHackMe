@@ -1,0 +1,13 @@
+Crack the Hash
+
+https://crackstation.net/
+hash-identifier 
+	command in linux opens up a program to id hashes. 
+hashid also helps in finding out what the hash type is. 
+	https://hashcat.net/wiki/doku.php?id=hashcat
+		super important to understand which algorithm is used
+if you cannot tell what kind of has it is, look at the first few characters. search through the hashcat wiki to see which ones usually belong to that. 
+This example page can also help
+https://hashcat.net/wiki/doku.php?id=example_hashes
+Also, rockyou.txt is a popular file of a list of words. Sorting it may help. Maybe I can sort it by character length. Still researching. 
+Still ongoing. Still don’t understand some of it. Will get back to it later. 
