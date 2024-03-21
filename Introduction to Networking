@@ -1,0 +1,34 @@
+Introduction to Networking
+
+OSI – Open system interconnection
+A Penguin Said That Nobody Drinks Pepsi
+Application – 	Apps with programs running. Sends data and packages it for presentation layer. (7th layer) //data
+Presentation –	Usually not in standard format yet. Presents/translates data into standardized format and handles encryption, compression, or any other types of data transformation. Sent to session. //data
+Session- 	Tries to maintain connection by checking that formatted data is received correctly while keeping different sessions from mixing. //data
+Transport- 	Chooses to send in UDP (connectionless but speed is more important like video calls) or TCP (connection based where quality is more important like file transfers or page loading). TCP sends data in segments, UDP in datagrams. //segments, datagrams
+Network-	Locates request destination (IP addresses for example) //packets
+Data Link-	Focuses on physical transmission addressing by adding MAC (Media Access Control address found in every device’s NIC (Network Interface Card). Checks if data has been corrupted. //frames
+Physical-	The actual wires and hardware of computers responsible for turning binary signal into legible data. (1st layer) //bits
+
+Various info is added by each layer during transmission. Network layer adds source/destination IP. Data link layer adds info at the end of transmission to verify if data has not been corrupted. Adds a layer of security. 
+This transmission process is called encapsulation. The receiving computer conducts de-encapsulation, a reverse of this process to unpackage the data.
+
+TCP/IP model is a little older than (OSI). 
+Application (7th,6th,5th layer)
+Transport (4th)
+Internet (3rd)
+N/w Interface (2nd and 1st) 
+TCP uses 3 way handshake
+	SYN – SYN/ACK – ACK
+Introduced by USA DoD to standardize network connection in 1982 due to differing manufacturing standard issues. OSI was later introduced by ISO (Organization for Standardization) but mostly used as a guide to learn. TCP/IP is the real standard. 
+IMCP works at N/w layer of OSI model/internet of TCP/IP. It’s ping. 
+Pinging a website can bring back it’s IP address. 
+Traceroute shows you the hops between servers and endpoints to get to a destination. 
+	Linux is traceroute. Windows is tracert
+whois is a command that shows who created/registered a domain and when.
+URLs are converted into IP addresses by the TCP/IP protocol DNS. If you put google.com on your search bar, your computer sends a query to a DNS server for the IP address for the URL provided. 
+First it’ll actually check it’s own local ‘host file’ to see if an explicit IP-domain mapping has been created. Older than DNS itself. If it does not, next it’ll check it’s own DNS cache to see if it asked DNS for the IP before (or at least has it saved).
+If still not found, your computer will query a recursive DNS, a DNS saved and programed into your router and computer provided by ISPs but Google and OpenDNS do control these servers as well. If still not found, request is sent to a root name server. These keep track of lower level DNS servers that are not popular. These are also called Top-level domain servers (TLD), split by different extensions (one handles .com and another handles .co.uk). 
+(I’m not so sure if this is authoritative name servers. this bit is confusing)
+dig is a command that manually allows to trace this entire process through a terminal. Good to know that TTL is time to live, information stating how long your computer should trust this cache before requesting the DNS servers again.  
+
