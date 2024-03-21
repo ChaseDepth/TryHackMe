@@ -1,0 +1,79 @@
+HTTP in detail
+HyperText Transfer Protocol (secure)
+Uniform Resource Locator
+
+
+Scheme: instructs what proto to use. HTTP, HTTPS. FTP ie
+user - username 
+host – IP address
+Port – the port to access. Usually 80 or 443
+Path – file location/file name
+Query string – More specific path. for /blog?id=1, it tells the blog path to find the blog ID 1
+Fragment -  reference to location of actual page
+You can make a request to a web servered with just GET /HTTP/1.1 but extra lines would help too
+
+GET / HTTP/1.1
+Host: tryhackme.com
+User-Agent: Mozilla/5.0 Firefox/87.0
+Referer: https://tryhackme.com/
+<THIS LINE EXISTS BUT IS BLANK TO LET WEB SERVER KNOW THE REQUEST IS OVER>
+response:
+
+HTTP/1.1 200 OK
+Server: nginx/1.15.8
+Date: Fri, 09 Apr 2021 13:34:03 GMT
+Content-Type: text/html
+Content-Length: 98
+
+<html>
+<head>
+    <title>TryHackMe</title>
+</head>
+<body>
+    Welcome To TryHackMe.com
+</body>
+</html>
+
+GET request - Used to get info from web server
+POST request – Used to submit data to web server and maybe create new records
+PUT request – submit data to web server to update info
+DELETE request – delete info/records from web server
+HTTP Status Codes
+	100-199 – info response
+		first part of req was successful and should continue to send their req. Not common
+	200-299 – success
+		req was successful
+	300-399 – redirection
+		-sending client to another resource like a webpage or different website altogether
+	400-499 – client errors
+	500-599 – error from server side. Usually a major problem from server handling the req
+Common codes
+	200 – OK
+	201 – Created
+	301 – Moved permanently
+	302 – Found
+	400 – Bad request
+	401 – Not Authorized. Usually associated with username/password
+	403 – Forbidden. No access regardless if logged in
+	405 -Method not allowed. ie sending a GET when the web server was expecting POST
+	404 – Page Not found
+	500 – Internal Service Error
+	503 – Service Unavailable. Cannot handle reqs, overloaded, or down for mx
+Headers are added data that you send to a web server when making requests
+Common Req Headers
+Host – some web sites provide multiple headers so asking for a specific one narrows it down
+User-Agent – Client browser software and v. number. Allows the website to know how to sort HTML, JS, and CSS or if it’s even applicable for your device.
+Content-Length – tells web server how long request is to ensure accuracy of request and receival.
+Accept-Encoding – Types of compression methods the browser supports so data can be sent in smaller packets
+Cookie – Data sent to server to help remember client info.
+	Set-cookie: info to store that is sent back to web server for each req
+Cache-control – how long to store the response content in browser cache before requesting cookies again
+Content-type – tells client what type of data is being returned (HTML, CSS, JS, Images, PDF, video, etc…)
+Content encoding – what method is used to compressed sent data to client.
+Viewing Your Cookies
+You can easily view what cookies your browser is sending to a website by using the developer tools, in your browser. If you're not sure how to get to the developer tools in your browser, click on the "View Site" button at the top of this task for a how-to guide.
+Once you have developer tools open, click on the "Network" tab. This tab will show you a list of all the resources your browser has requested. You can click on each one to receive a detailed breakdown of the request and response. If your browser sent a cookie, you will see these on the "Cookies" tab of the request.
+
+
+
+
