@@ -1,0 +1,9 @@
+Security Operations
+Find vulnerabilities, detect unauth activity, discover policy violations, detect intrusions, support incident response. 
+Monitor- NSM (Network Security Monitoring) and computers for security alerts and notifications. respond back as needed
+Vulnerability management- can find and assist in patching. Doesn’t always have to execute it. I imagine they get someone else to do it.
+Malware analysis- execute malicious programs in a controlled environment. More advanced analysis requires a dedicated team
+Reporting- report incidents and alarms. 
+Proactive approaches
+NSM, threat hunting (assuming a threat as infiltrated), and threat intelligence (learning about potential adversaries. 
+Uses firewall to prevent and stop attacks
