@@ -1,0 +1,43 @@
+Regular expressions
+Regex, It is a pattern of text I define to search documents and match exactly what I’m looking for
+	https://regexr.com/
+A charset is define by [ ] and allows to search for patterns
+[abc] will match a, b, and c for every letter
+[abc]zzz will match azz, bzz, and czz
+- defines ranges, so [a-c]zzz is the same above
+[a-cx-z] looks for a,b,c,x,y,z so [a-c-x-z]zz matches with azz, bzz, czz, xzz, yzz, and zzz
+[a-zA-Z] case sensitive lower and upper
+file[1-3] file1, file2, and file3
+^ excludes a character
+[^k]ing will match ring, sing, $ing but not king. It will search for everything else with -ing but king.
+You can add range to exclusions too
+[^a-c] will match dat, eat, fat…
+	Note that this matches occurrences and not strings so [abc] can match with cba.
+. is a wild card. a.c can match aac, a!c, doesn’t matter.
+? is optional so abc? will match a, ab, abc, c. Doesn’t matter
+To actually look for a period, you need \. so a\.c will only match a.c
+There are shortcuts for charsets
+	\d  any single digit like 9
+	\D any non-digit like A or @
+	\w for alphanumeric like a or 3 and even _ so reasonable for strings
+	\W for non-alphanumeric like ! or #
+	\s matches whitespaces like spaces, tabs, and line breaks
+	\S matches everything else but whitespace
+{2} will look any characters that repeat twice. z{2} will look for zz
+{1,5} 1-5 times
+{2,} 2 or more times
+* 0 or more times
++ 1 or more times
+^abc means the character set starts with abc . Note that [^a] with the parathesis means to exclude! 
+xyz$ means the character sets ends with xyz
+( ) encloses groups of characters. Imagine pemdas. 
+| means or
+during the (day|night) matches
+	during the day
+	during the night
+(no){5} matches with nonononono
+\$ to find $ specifically
+actually \. or \% or \^ to find those specific characters. \ specifies to find that special character
+@ doesn’t need \
+
+
